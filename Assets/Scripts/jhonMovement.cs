@@ -37,7 +37,7 @@ public class jhonMovement : MonoBehaviour
 
         //revisar desde acá video Raycast 18:31hs del video JLPM canal de youtube https://www.youtube.com/watch?v=GbmRt0wydQU&list=PLI2gzz9HM7zdGXbDnIsY-tE35Q6jSoMiz&index=117&t=517s
         //Detectar suelo
-        Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
+        //Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
         if (Physics2D.Raycast(transform.position, Vector3.down * 0.1f))
         {
             grounded = true;

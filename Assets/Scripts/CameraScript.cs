@@ -9,8 +9,11 @@ public class CameraScript : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        Vector3 position = transform.position;
-        position.x = jhon.transform.position.x;
-        transform.position = position;
+        if (jhon != null)
+        {
+            Vector3 position = transform.position;
+            position.x = jhon.transform.position.x;
+            transform.position = position;
+        }
     }
 }

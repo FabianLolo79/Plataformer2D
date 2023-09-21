@@ -11,6 +11,8 @@ public class GruntScript : MonoBehaviour
     private int health = 2;
     private void Update()
     {
+        if (jhon == null) return;
+
         // para que el enemigo mire siempre al personaje
         Vector3 direction = jhon.transform.position - transform.position;
         if (direction.x >= 0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
