@@ -39,7 +39,7 @@ public class jhonMovement : MonoBehaviour
 
         //revisar desde acá video Raycast 18:31hs del video JLPM canal de youtube https://www.youtube.com/watch?v=GbmRt0wydQU&list=PLI2gzz9HM7zdGXbDnIsY-tE35Q6jSoMiz&index=117&t=517s
         //Detectar suelo
-        Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
+        //Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
         if (Physics2D.Raycast(transform.position, Vector3.down * 0.1f))
         {
             grounded = true;
@@ -63,14 +63,30 @@ public class jhonMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Finish"))
         {
-            LoadNextScene();
+            LoadSceneWin();
+        }
+        if (collision.gameObject.CompareTag("colisionCaida"))
+        {
+            LoadSceneLose();
+        }
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Hit();
         }
     }
 
-    void LoadNextScene()
+    //Función escena Winner
+    void LoadSceneWin()
     {
         int activeSceceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(activeSceceneIndex + 2);
+    }
+
+    //Función escena GameOver
+    void LoadSceneLose()
+    {
+        int activeSceceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(activeSceceneIndex + 1);
     }
 
     //Función disparo
@@ -87,7 +103,7 @@ public class jhonMovement : MonoBehaviour
     //Función salto
     private void Jump()
     {
-        rigidBody2D.AddForce(Vector2.up * jumpForce); //ForceMode2D.Impulse
+        rigidBody2D.AddForce(Vector2.up * jumpForce); 
     }
 
     // utilizado para físicas porque se actualizan muy frecuentemente

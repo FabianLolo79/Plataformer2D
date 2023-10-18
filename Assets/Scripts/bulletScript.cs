@@ -36,20 +36,25 @@ public class bulletScript : MonoBehaviour
 
     // colisión de la bala ACA ME DA EL ERROR o comenzar acá!!!
 
-    /*private void OnTriggerEnter2D(Collider2D other)
-    {
-        jhonMovement jhon = other.GetComponent<jhonMovement>();
-        GruntScript grunt = other.GetComponent<GruntScript>();
-        if (jhon != null)
-        {
-            //jhon.Hit();
-            Debug.Log("Jhon");
-        }
-        if (grunt != null)
-        {
-            //grunt.Hit();
-            Debug.Log("grunt");
-        }
-        DestroyBullet();
-    }*/
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    jhonMovement jhon = other.GetComponent<jhonMovement>();
+    //    GruntScript grunt = other.GetComponent<GruntScript>();
+    //    if (jhon != null)
+    //    {
+    //        //jhon.Hit();
+    //        Debug.Log("jhon");
+    //    }
+    //    if (grunt != null)
+    //    {
+    //        //grunt.Hit();
+    //        Debug.Log("grunt");
+    //    }
+    //    DestroyBullet();
+    //}
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+        
+    //}
 }
