@@ -7,9 +7,9 @@ public class GruntScript : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject jhon;
 
-    private float lastShoot;
-    private int health = 2;
-    private void Update()
+    public float lastShoot;
+    public int health = 2;
+    void Update()
     {
         if (jhon == null) return;
 
@@ -28,7 +28,7 @@ public class GruntScript : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    public void Shoot()
     {
         //Debug.Log("ShootEnemy");
         Vector3 direction;
@@ -39,9 +39,11 @@ public class GruntScript : MonoBehaviour
         bullet.GetComponent<bulletScript>().setDirection(direction);
     }
 
-    public void Hit()
-    {
-        health -= 1;
-        if (health == 0) Destroy(gameObject);
-    }
+    //public void Hit()
+    //{
+    //    health -= 1;
+    //    if (health == 0) Destroy(gameObject);
+    //}
+
+
 }

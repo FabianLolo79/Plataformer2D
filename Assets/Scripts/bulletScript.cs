@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class bulletScript : MonoBehaviour
 {
-    private Rigidbody2D rb2D;
-    private Vector3 direction;
+    public Rigidbody2D rb2D;
+    public Vector3 direction;
 
     public float speed;
     public AudioClip sound;
@@ -36,7 +36,7 @@ public class bulletScript : MonoBehaviour
 
     // colisión de la bala ACA ME DA EL ERROR o comenzar acá!!!
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         jhonMovement jhon = other.GetComponent<jhonMovement>();
         GruntScript grunt = other.GetComponent<GruntScript>();
@@ -51,5 +51,5 @@ public class bulletScript : MonoBehaviour
             Debug.Log("grunt");
         }
         DestroyBullet();
-    }
+    }*/
 }
