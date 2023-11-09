@@ -13,7 +13,6 @@ public class jhonMovement : MonoBehaviour
     public Rigidbody2D rigidBody2D;
     public Animator animator;
     public float horizontal;
-    public bool grounded;
     public float lastShoot; // variable para controlar el disparo
     public int health = 5;
 
@@ -36,18 +35,9 @@ public class jhonMovement : MonoBehaviour
 
         //animator running
         animator.SetBool("running", horizontal != 0.0f);
-
-        //revisar desde acá video Raycast 18:31hs del video JLPM canal de youtube https://www.youtube.com/watch?v=GbmRt0wydQU&list=PLI2gzz9HM7zdGXbDnIsY-tE35Q6jSoMiz&index=117&t=517s
-        //Detectar suelo
-        //Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
-        if (Physics2D.Raycast(transform.position, Vector3.down * 0.1f))
-        {
-            grounded = true;
-        }
-        else grounded = false;
-
+                
         //Salto
-        if (Input.GetKeyDown(KeyCode.UpArrow) && grounded) 
+        if (Input.GetKeyDown(KeyCode.UpArrow)) 
         {
             Jump();
         }
@@ -115,7 +105,7 @@ public class jhonMovement : MonoBehaviour
     public void Hit()
     {
         health -= 1;
-        if (health == 0) Destroy(gameObject);
+        if (health == 0) gameObject.SetActive(false); 
     }
 }
 

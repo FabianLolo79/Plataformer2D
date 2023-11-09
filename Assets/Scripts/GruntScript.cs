@@ -50,6 +50,6 @@ public class GruntScript : MonoBehaviour
     public void Hit()
     {
         health -= 1;
-        if (health == 0) Destroy(gameObject);
+        if (health == 0) gameObject.SetActive(false);
     }
 }
